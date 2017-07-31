@@ -9,7 +9,7 @@ ENV MONIT_VERSION=5.20.0 \
     PATH=$PATH:/opt/monit/bin
 
 # Compile and install monit
-RUN apk add --update gcc musl-dev make libressl-dev file zlib-dev && \
+RUN apk add --update gcc musl-dev make libressl-dev file zlib-dev inotify-tools && \
     mkdir -p /opt/src; cd /opt/src && \
     curl -sS ${MONIT_URL}/monit-${MONIT_VERSION}.tar.gz | gunzip -c - | tar -xf - && \
     cd /opt/src/monit-${MONIT_VERSION} && \

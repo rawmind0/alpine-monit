@@ -42,6 +42,9 @@ do
 	fi
 done
 
+echo "Starting config change watch"
+/usr/bin/env bash ${MONIT_HOME}/bin/monit-watch-config-changes.sh &
+
 trap 'echo "Stopping monit with pid [$PID]"; kill -SIGTERM $PID; wait $PID' SIGTERM SIGINT
 ${MONIT_HOME}/bin/monit ${MONIT_ARGS} &
 PID=$!
