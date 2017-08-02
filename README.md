@@ -20,6 +20,7 @@ Starts automatically all services conf files that would be copied in /opt/monit/
 
 ## Versions
 
+- `5.23` [(Dockerfile)](https://github.com/rawmind0/docker-alpine/blob/5.23/alpine-monit/Dockerfile) Monit version 5.23
 - `0.5.20-4` [(Dockerfile)](https://github.com/rawmind0/docker-alpine/blob/0.5.20-4/alpine-monit/Dockerfile) Monit version 5.20
 - `0.5.19-2` [(Dockerfile)](https://github.com/rawmind0/docker-alpine/blob/0.5.19-2/alpine-monit/Dockerfile) Monit version 5.19
 - `0.5.18-6` [(Dockerfile)](https://github.com/rawmind0/docker-alpine/blob/0.5.18-6/alpine-monit/Dockerfile) Monit version 5.18
