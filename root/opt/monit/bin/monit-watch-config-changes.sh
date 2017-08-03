@@ -2,7 +2,10 @@
 
 while true
 do
-	inotifywait -qr ${MONIT_HOME}/etc/conf.d
-	kill -HUP `cat ${MONIT_HOME}/log/monit.pid`
+	inotifywait --exclude '/\..+' -e modify -e move -e create -e delete -qr ${MONIT_HOME}/etc/conf.d
+	if monit -t
+	then
+		kill -HUP `cat ${MONIT_HOME}/log/monit.pid`
+	fi
 	sleep 1
 done
