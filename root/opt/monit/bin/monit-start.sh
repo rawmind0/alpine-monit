@@ -42,8 +42,12 @@ do
 	fi
 done
 
-echo "Starting config change watch"
-/usr/bin/env bash ${MONIT_HOME}/bin/monit-watch-config-changes.sh &
+MONIT_RELOAD=${MONIT_RELOAD:-"false"}
+
+if [ "${MONIT_RELOAD}" = "true" ]; then
+	echo "Starting config change watch"
+	/usr/bin/env bash ${MONIT_HOME}/bin/monit-watch-config-changes.sh &
+fi
 
 trap 'echo "Stopping monit with pid [$PID]"; kill -SIGTERM $PID; wait $PID' SIGTERM SIGINT
 ${MONIT_HOME}/bin/monit ${MONIT_ARGS} &
