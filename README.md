@@ -39,7 +39,8 @@ Monit is installed with the default configuration and some parameters can be ove
 - MONIT_PORT="2812"             # Port to listen monit httpd service
 - MONIT_ALLOW="localhost"       # Rule to allow connections to the httpd port
 - MONIT_ARGS="-I"               # Monit exec args
-- SERVICE_VOLUME="/opt/tools"   # Optiona volume to get service tools.To know more look at [alpine-tools][alpine-tools]
+- MONIT_RELOAD="false"          # Set to "true" to automaticly reload monit when the configuration is changed
+- SERVICE_VOLUME="/opt/tools"   # Optional volume to get service tools. To know more look at [alpine-tools][alpine-tools]
 
 ## Usage
 
