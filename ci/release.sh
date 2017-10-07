@@ -18,14 +18,16 @@ if [ "$exist_image" -ne "1" ]; then
 	checkError $?
 fi
 
-log "Checking git Dockerfile changes ${TAG} ..."
-if [ "$(git status --porcelain | grep -q Dockerfile ; echo $?)" -eq "0" ]; then 
-	log "Commiting git Dockerfile changes ${TAG} ..."
-	git config --global user.email "${GITHUB_MAIL}"
-    git config --global user.name "${GITHUB_USER}"
-	git commit -am "Dockerfile for ${DOCKER_IMAGE}"
-	checkError $?
-fi
+log "Configuring git global user data ..."
+git config --global user.email "${GITHUB_MAIL}"
+git config --global user.name "${GITHUB_USER}"
+
+#log "Checking git Dockerfile changes ${TAG} ..."
+#if [ "$(git status --porcelain | grep -q Dockerfile ; echo $?)" -eq "0" ]; then 
+#	log "Commiting git Dockerfile changes ${TAG} ..."
+#	git commit -am "Dockerfile for ${DOCKER_IMAGE}"
+#	checkError $?
+#fi
 
 log "Tagging git repo ${TAG} ..."
 git tag ${TAG}
