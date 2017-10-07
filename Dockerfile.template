@@ -35,5 +35,5 @@ RUN apk add --update gcc musl-dev make libressl-dev file zlib-dev && \
 ADD root /
 RUN chmod +x \${MONIT_HOME}/bin/monit-start.sh
 
-ENTRYPOINT ["/bin/bash","-c","/opt/monit/bin/monit-start.sh"]
+ENTRYPOINT ["/bin/bash","-c","\${MONIT_HOME}/bin/monit-start.sh"]
 EOF
