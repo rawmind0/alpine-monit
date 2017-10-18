@@ -37,6 +37,7 @@ Besides, you can customize the configuration in several ways:
 
 Monit is installed with the default configuration and some parameters can be overrided with env variables:
 
+- MONIT_DAEMON="60"             # Length of monit "cycles"
 - MONIT_PORT="2812"             # Port to listen monit httpd service
 - MONIT_ALLOW="localhost"       # Rule to allow connections to the httpd port
 - MONIT_ARGS="-I"               # Monit exec args
