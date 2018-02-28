@@ -16,7 +16,7 @@ FROM ${DOCKER_FROM}
 MAINTAINER Raul Sanchez <rawmind@gmail.com>
 
 # Compile and install monit and confd
-ENV MONIT_VERSION=5.24.0 \
+ENV MONIT_VERSION=5.25.1 \
     MONIT_HOME=/opt/monit \
     MONIT_URL=https://mmonit.com/monit/dist \
     SERVICE_VOLUME=/opt/tools \
