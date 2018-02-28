@@ -16,6 +16,10 @@ if [ -n "${CHECK_TAG}" ]; then
 	exit 1
 fi
 
+log "Generating Dockerfile ..."
+bash Dockerfile.template
+checkError $?
+
 log "Building ${DOCKER_IMAGE} ..."
 docker build -t ${DOCKER_IMAGE} .
 checkError $?
