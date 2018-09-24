@@ -42,6 +42,7 @@ DOCKER_USER=${DOCKER_USER:-"rawmind"}
 DOCKER_PASS=${DOCKER_PASS:-"password"}
 DOCKER_NAME=${DOCKER_NAME:-"alpine-monit"}
 DOCKER_ARCHIVE=${DOCKER_ARCHIVE:-$parent_path"/docker_image"}
+DOCKER_FILE_TEMP=${DOCKER_FILE_TEMP:-"Dockerfile.temp"}
 GITHUB_USER=${GITHUB_USER:-"rawmind0"}
 GITHUB_MAIL=${GITHUB_mail:-"rawmind@gmail.com"}
 GITHUB_TOKEN=${GITHUB_TOKEN:-"TOKEN"}
