@@ -20,12 +20,13 @@ fi
 
 chmod 700 ${MONIT_HOME}/etc/monitrc
 
+MONIT_DAEMON=${MONIT_DAEMON:-"60"}
 MONIT_PORT=${MONIT_PORT:-"2812"}
 MONIT_ALLOW=${MONIT_ALLOW:-"localhost"}
 MONIT_ARGS=${MONIT_ARGS:-"-I"}
 
 cat << EOF > ${MONIT_HOME}/etc/conf.d/basic
-set daemon 60
+set daemon ${MONIT_DAEMON}
 set logfile ${MONIT_HOME}/log/monit.log
 set pidfile ${MONIT_HOME}/log/monit.pid
 set statefile ${MONIT_HOME}/log/monit.state
