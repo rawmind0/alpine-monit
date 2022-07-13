@@ -11,8 +11,7 @@ log "Finding ${DOCKER_IMAGE}..."
 list_image=$(docker images -q ${DOCKER_IMAGE})
 checkError $?
 
-exist_image=$(echo $list_image | wc -l)
-if [ "$exist_image" -ne "1" ]; then
+if [ "$list_image" == "" ]; then
 	log "Loading ${DOCKER_IMAGE} ..."
 	docker load -i ${DOCKER_ARCHIVE}
 	checkError $?
