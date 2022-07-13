@@ -7,14 +7,14 @@ if [ -n "$1" ]; then
 fi
 
 DOCKER_FILE=${DOCKER_FILE:-"Dockerfile"}
-DOCKER_FROM=${DOCKER_FROM:-"rawmind/alpine-base:3.10-1"}
+DOCKER_FROM=${DOCKER_FROM:-"rawmind/alpine-base:3.15-5"}
 
 cat << EOF > ${DOCKER_FILE}
 FROM ${DOCKER_FROM}
 MAINTAINER Raul Sanchez <rawmind@gmail.com>
 
 # Compile and install monit and confd
-ENV MONIT_VERSION=5.26.0 \
+ENV MONIT_VERSION=5.32.0 \
     MONIT_HOME=/opt/monit \
     MONIT_URL=https://mmonit.com/monit/dist \
     SERVICE_VOLUME=/opt/tools \
